@@ -1,0 +1,22 @@
+name: 'UW news common configuration'
+description: 'Common config for UW news website'
+type: module
+core_version_requirement: ^9
+dependencies:
+  - block
+  - ckeditor
+  - ctools
+  - editor
+  - editor_file
+  - filter
+  - language
+  - media
+  - node
+  - redirect_after_login
+  - system
+  - taxonomy
+  - taxonomy_menu
+  - twig_field_value
+  - twig_tweak
+  - user
+  - views

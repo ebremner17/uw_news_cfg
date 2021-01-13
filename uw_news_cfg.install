@@ -1,0 +1,19 @@
+<?php
+
+/**
+ * @file
+ * Install, update and uninstall for UW news site.
+ */
+
+/**
+ * Implements hook_install().
+ */
+function uw_news_cfg_install() {
+  \Drupal::service('theme_installer')->install(['claro']);
+
+  $config = \Drupal::service('config.factory')->getEditable('system.theme');
+  $config->set('admin', 'claro')->save();
+  $config->set('use_admin_theme', 1)->save();
+
+  \Drupal::configFactory()->getEditable('node.settings')->set('use_admin_theme', TRUE)->save(TRUE);
+}
