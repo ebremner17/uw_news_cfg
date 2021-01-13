@@ -9,11 +9,24 @@
  * Implements hook_install().
  */
 function uw_news_cfg_install() {
+
+  // Install the theme for UW news.
+  \Drupal::service('theme_installer')->install(['uw_news_theme']);
+
+  // Set the UW news theme as the default theme.
+  \Drupal::configFactory()
+    ->getEditable('system.theme')
+    ->set('default', 'cuba_theme')
+    ->save();
+
+  // Install the claro admin theme.
   \Drupal::service('theme_installer')->install(['claro']);
 
+  // Set the default admin theme as claro.
   $config = \Drupal::service('config.factory')->getEditable('system.theme');
   $config->set('admin', 'claro')->save();
   $config->set('use_admin_theme', 1)->save();
 
+  // Set the option to use the admin theme when editing pages.
   \Drupal::configFactory()->getEditable('node.settings')->set('use_admin_theme', TRUE)->save(TRUE);
 }

@@ -15,7 +15,6 @@ dependencies:
   - redirect_after_login
   - system
   - taxonomy
-  - taxonomy_menu
   - twig_field_value
   - twig_tweak
   - user
