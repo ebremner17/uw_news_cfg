@@ -16,7 +16,7 @@ function uw_news_cfg_install() {
   // Set the UW news theme as the default theme.
   \Drupal::configFactory()
     ->getEditable('system.theme')
-    ->set('default', 'cuba_theme')
+    ->set('default', 'uw_news_theme')
     ->save();
 
   // Install the claro admin theme.
